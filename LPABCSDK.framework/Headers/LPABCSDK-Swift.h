@@ -184,6 +184,37 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+/// Liveperson ABC SDK goal is to provide integration solutions for iOS apps (Host & iMessage app extension) with LiveEngage platform.
+/// Features:
+/// <ul>
+///   <li>
+///     <em>Reporting SDE’s:</em>
+///     Once a CIM (custom interactive message) is sent to device, this SDK will allows you to report SDE’s to LivePerson as engagement attributes to enhance the conversation.
+///     For more information, see <a href="https://developers.liveperson.com/engagement-attributes-types-of-engagement-attributes.html">types of engagement attributes</a>
+///   </li>
+///   <li>
+///     <em>Implicit events callback notification:</em>
+///     Once a predefined event <code>LPimplicitEventCallbackType</code> is fullfiled, an implicit event callback will notify implementors through <code>implicitSDEClosure</code>.
+///     The best example is the ability to get notified once a new conversation is initiated.
+///   </li>
+///   <li>
+///     <em>Generating CIM reply from device with textual context:</em>
+///     This SDK will also provide a textual context to a generated replay message CIM from device, to LivePerson conversation.
+///   </li>
+/// </ul>
+/// Parameter:
+/// \code
+///    hostEnvironment: the current running environment
+///
+///    enableLog: enable sdk logs
+///
+///    logLevel: the sdk log level
+///
+///    idleSDEStackCompletion: completion colsure callback for sending idle SDE stack
+///
+///    implicitSDEClosure: completion colsure callback for implicit Flow
+///
+/// \endcode
 SWIFT_CLASS("_TtC8LPABCSDK8LPABCSDK")
 @interface LPABCSDK : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
