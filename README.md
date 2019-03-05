@@ -29,9 +29,6 @@ XCode Installation:
 	self.lpabcsdk.updateWithIncomingInteractiveMessage(with: conversation, message: message)
 
 
-
-
-hello
 Implementation:
 
 - Initializing the SDK:
