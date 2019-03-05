@@ -16,10 +16,6 @@
 		<data>
 		BrgVpdxvwFlssZ+flAtWfhT0jC0=
 		</data>
-		<key>LPABCSDK.bundle.9cm4ff/bundle.xar</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-		</data>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<data>
 		jqzZodq7eSXjhRJ/YHY7rp5rck8=
@@ -28,13 +24,17 @@
 		<data>
 		ImnJUcHIgKPDtiTGb0m5+hmHy9k=
 		</data>
+		<key>LPABCSDKStrippingScript.sh</key>
+		<data>
+		ZRKXzD43NH/g9LoUltnuhNnzIg4=
+		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		8CYE8tzHj4V8e4n8rNAcPKnhziU=
+		S0LYoIwx3nIYueDkYXxYkPGj5LA=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		oACDrVd/z5l2mpdwU5x/9h+ddzY=
+		N+B2EDWS4EKf8viwM1KYymnq/GE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -57,13 +57,6 @@
 			JSj8ZolN4SESNOoVJQDoW0AwIh2xWiLd5Ru9E/u5+7o=
 			</data>
 		</dict>
-		<key>LPABCSDK.bundle.9cm4ff/bundle.xar</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
-			</data>
-		</dict>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<dict>
 			<key>hash2</key>
@@ -78,18 +71,25 @@
 			cO7qqDWZsSlSj4hNXrfhbX812qS7B2I8OoZGH0zgYFQ=
 			</data>
 		</dict>
+		<key>LPABCSDKStrippingScript.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			v2UxU+gNbWCGbHPP+G3zVyMedp4IELqI/F6xKpyYyug=
+			</data>
+		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ItQ+rvXeaxyyYjdWqz7dhXWr2nqLgWXYiHJ8uyI50To=
+			pFc2iMRjhifJ8wtrcQJNfllP+UBjum6hUhhA9mZTfpA=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ietLgx0dHXRkXpPT9DFRpYkM2IxrX1tQsEFVbROsjx8=
+			Brpi+oQyHg9G3mUthMNlEAC3h+fT/KEFtUYlmDyzpAY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
