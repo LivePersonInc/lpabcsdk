@@ -29,6 +29,9 @@ XCode Installation:
 	self.lpabcsdk.updateWithIncomingInteractiveMessage(with: conversation, message: message)
 
 
+
+
+
 Implementation:
 
 - Initializing the SDK:
@@ -36,8 +39,9 @@ Implementation:
 	LPABCSDK.initializeSDK(minimumLogLevel: .trace, enableLog: true)
 
 - Create SDEs: 
-	CreateSDE method return an SDEBase object in a closure, which then could be setup with a desired SDE.
-	Once setup the sde will be added to a stack that will needs an explicit send:
+	CreateSDE function will generate an SDEBase object with a template reference to the relevant SDE type that passed in, as a completion closure. 
+	A setup call on the callback sde, will setup the sde with all relevant params and add it to a stack.
+	 
 
 
 
