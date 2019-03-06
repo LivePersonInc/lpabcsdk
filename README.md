@@ -53,7 +53,7 @@ Implementation:
 - send SDE:
 
 		sendSDEStack(onSuccess success: successClosureType = nil,
-	    	                          onFailure failure: failiurClosureType = nil) 
+	    	                          onFailure failure: failureClosureType = nil) 
 
 	Sending the agregated SDE stack (when idle stack is not selected). 
 	callback with success/faliour closures.
