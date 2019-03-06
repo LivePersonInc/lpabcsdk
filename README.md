@@ -56,7 +56,7 @@ Implementation:
 	    	                          onFailure failure: failureClosureType = nil) 
 
 	Sending the agregated SDE stack (when idle stack is not selected). 
-	callback with success/faliour closures.
+	callback with success/failure closures.
 
 	    	                          
 - implicitSDEClosure
