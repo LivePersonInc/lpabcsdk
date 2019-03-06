@@ -36,9 +36,48 @@ Implementation:
 	LPABCSDK.initializeSDK(minimumLogLevel: .trace, enableLog: true)
 
 - Create SDEs: 
-	CreateSDE function will generate an SDEBase object with a template reference to the relevant SDE type that passed in, as a completion closure. 
-	A setup call on the callback sde, will setup the sde with all relevant params and add it to a stack.
+
+		createSDE(sdeType: SDE_Type,
+	                          autoSendWhenIdle: Bool? = false,
+	                          completion: (inout SDEBase)
+
+	CreateSDE function will generate an SDEBase object with a template reference to the relevant SDE type that passed in parameter, as a completion closure. 
+	A setup call on the callback sde is required inorder to initiate the sde with all relevant params, and add it to a stack. 
+	* optional - autoSendWhenIdle, when set to true, the sde will be added to the idleStack which automatically send the stack once idele timeout is met. Detfault is 5 sec but could be anything between 0-15 sec.
+	see setSDEStackIdleInterval(interval:)
 	 
+- setSDEStackIdleInterval(interval:15)
+	This will setup an Idle timeout interval for auto sending the idle SDE stack (optional).
+	default is 5sec and Max is 15 sec.
+
+- send SDE:
+		sendSDEStack(onSuccess success: successClosureType = nil,
+	    	                          onFailure failure: failiurClosureType = nil) 
+
+	Sending the agregated SDE stack (when idle stack is not selected). 
+	callback with success/faliour closures.
+
+	    	                          
+- implicitSDEClosure
+	Will get invoked when a qualifying event is met, and callback the type of that event 
+	see eventLPimplicitEventCallbackType 
+
+
+- eventLPimplicitEventCallbackType is the type of event being caled back from the implicitSDEClosure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
