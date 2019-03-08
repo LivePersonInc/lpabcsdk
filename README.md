@@ -50,11 +50,14 @@ Implementation:
 - Create SDEs: 
 
 		createSDE(sdeType: SDE_Type,
-	                          autoSendWhenIdle: Bool? = false,
-	                          completion: (inout SDEBase)
+	                        autoSendWhenIdle: Bool? = false,
+	                        completion: (inout SDEBase)
+
 
 		CreateSDE function will generate an SDEBase object with a template reference to the relevant SDE type that passed in parameter, as a completion closure. 
+
 		A setup call on the callback sde is required inorder to initiate the sde with all relevant params, and add it to a stack. 
+		
 		* optional - autoSendWhenIdle, when set to true, the sde will be added to the idleStack which automatically send the stack once idele timeout is met. Detfault is 5 sec but could be anything between 0-15 sec.
 		see setSDEStackIdleInterval(interval:)
 	 
@@ -85,9 +88,10 @@ Implementation:
 
 	 	Indicating the type of implicit event that is being caled back from the implicitSDEClosure. 
 
-- Textual context for an outgoing CIM (device to LE)
-		implement:
+- Textual context for an outgoing CIM (device to LE)implement:
+
 		'appendReplayMessagePayload(message: MSMessage, textContext: String)'
+		
 		 With the initiated MSMessage object, and the desired textual String. 
 
 
