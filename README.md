@@ -5,10 +5,18 @@ After sending a custom interactive message (CIM), this SDK will allows you to en
 https://developers.liveperson.com/engagement-attributes-types-of-engagement-attributes.html
 
 LE Account Configuration/ Server side installation:
-1. Enable SDK via Houston:  Messaging Gateway- Apple, set SDK Enabled flag to ‘true’
-2. Enable App installation and obtain appinstallID in houston/Messaging Gateway/Apple
-3. Make sure site settings enabled with messaging.sdes
-4. Make sure site setting file sharing isset to 'true'
+
+1. Make sure you have an ABC biz ID.
+2. In houston,‘ App management” use template/custom to create a json stab. Make sure to populate a "client_name". 
+The rest of the json is not needed and could be disposed. 
+ then click “install”. 
+The generated ‘appInstallId’ will show up in the Private installed Apps tab, under the client_name you created..
+3. Enable SDK via Houston, go to - Messaging Gateway- Apple enable SDK Enabled flag to ‘true’
+Paste in the app install id from previous step
+Paste in the biz id from first step
+4. Make sure site settings enabled with messaging.sdes (set flag to ‘true’)
+5. Make sure site setting file sharing is enabled (messaging.file.sharing.enabled) flag is set to ‘true’
+
 
 XCode Installation:
 
