@@ -1,129 +1,249 @@
-# Liveperson iOS ABC SDK
+![N|Solid](https://media.glassdoor.com/sqll/11463/liveperson-squarelogo.png)
+## LivePerson iOS ABC SDK
 
-Liveperson ABC SDK goal is to provide integration solutions for iOS apps (Host & iMessage app/ Extension) with LiveEngage platform. 
-After sending a custom interactive message (CIM), this SDK will allows you to enhance the conversation by reporing any of the supported consumer behavior/SDEs, as engagement attributes to the Liveengage platform:  
-https://developers.liveperson.com/engagement-attributes-types-of-engagement-attributes.html
+ 
 
-LE Account Configuration/ Server side installation:
+LivePerson ABC SDK goal is to provide integration solutions for iOS apps (Host & iMessage app/ Extension) with LiveEngage platform. After sending a custom interactive message (CIM), this SDK will allows you to enhance the conversation experience with the following features:
+ 
+  -  Reporing any of the supported consumer behavior/SDEs, as engagement attributes to the Liveengage platform:
+     https://developers.liveperson.com/engagement-attributes-types-of-engagement-attributes.html
+  -  Abvility to send a Custom Interactive Message (CIM) reply message from consumer to agent, with a unique textual context.
+  -  Notify special events callback.
+  
+ LE Account Configuration/ Server side installation:
+ 
+1.  Make sure you have an ABC biz ID.
 
-1. Make sure you have an ABC biz ID.
-2. In houston,‘ App management” use template/custom to create a json stab. Make sure to populate a "client_name". 
-The rest of the json is not needed and could be disposed. 
- then click “install”. 
-The generated ‘appInstallId’ will show up in the Private installed Apps tab, under the client_name you created..
-3. Enable SDK via Houston, go to - Messaging Gateway- Apple enable SDK Enabled flag to ‘true’
-Paste in the app install id from previous step
-Paste in the biz id from first step
+2. In houston,‘ App management' use template/custom to create a json stab:
+	- Make sure to populate a "client_name". The rest of the json is not needed and could be disposed. 
+	- Click “install”, The generated ‘appInstallId’ will show up in the 'Private installed Apps' tab, under the client_name you created.
+3. Enable ABC SDK via Houston:
+	- go to: Messaging Gateway- Apple
+	- Enable SDK enabled flag to ‘true’
+	- Paste the 'app install id' from previous step
+	- Paste in the 'biz id' from first step
+	
 4. Make sure site settings enabled with messaging.sdes (set flag to ‘true’)
 5. Make sure site setting file sharing is enabled (messaging.file.sharing.enabled) flag is set to ‘true’
 
 
-XCode Installation:
+## Structure content CIM for the [sample app](https://s3.amazonaws.com/lp-mobile-apps/lpabcsdk/index.html)
+```
+json:
+{"type": "vertical","elements":[]}
 
-1. Copy lpabcsdk.framework to your XCode project, make sure it is included in Embedded Binaries section, 
-    under project settings/ General tab for the iMessageApp Target, and  your App target (if needed ).
-    
-2. In project settings, navigate to the Build Phases tab, and paste the following:
+Metadata:
+[{
+  "type": "BusinessChatCustomMessage",
+  "appId": 1234,
+  "appName": "LPABCSDK",
+  "bid":"com.apple.messages.MSMessageExtensionBalloonPlugin:7A76CR8BD8:com.liveperson.lpabcmaker.MessagesExtension",
+  "sessionIdentifier": "",
+  "useLiveLayout": true,
+  "receivedMessage": {
+  "imageURL":"https://s3.amazonaws.com/lp-mobile-apps/ABCBestPractice/cityLogo.jpg",
+    "title": "Message send failure",
+    "style": "icon",
+    "subtitle": "Lots to explore together.",
+    "secondarySubtitle": "Click to download",
+    "tertiarySubtitle": "",
+    "imageTitle": "",
+    "imageSubtitle": ""
+  },
+  "URL": ""
+}]
+```
 
-"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/LPABCSDK.framework/LPABCSDKStrippingScript.sh"
-   
-3. In the info.plist of each implemented targets, create a dictionary with the key ‘LPABC_PARAMS’ 
-    and add a key: lpabc_appgroup  with the value of your app group:  lpabc_appgroup : <your_app_group_id>
+## SDK Installation
 
-4. Import lpabcsdk and initialize the SDK
+1. Copy lpabcsdk.framework to your XCode project, make sure it is included in **Embedded Binaries** section, under **project settings/ General** tab for the iMessageApp Target, and  your App target (if needed ).
 
-5. For enabling sde reporting ability, In the iMessage app/extension -  add the following code in the overrides of
-	- override func didBecomeActive(with conversation: MSConversation) AND
-	- override func didReceive(_ message: MSMessage, conversation: MSConversation)  of MSMessagesAppViewController:
+2. In project settings, navigate to the Build Phases tab, and click the + button to paste the following:
 
-	'self.lpabcsdk.updateWithIncomingInteractiveMessage(with: conversation, message: message)
+```
+ 	${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/LPABCSDK.framework/LPABCSDKStrippingScript.sh
+```
+
+3. For each implementing target, make sure to enable App groups in capabilities section in the info.plist: 
+	- create a dictionary with the key **‘LPABC_PARAMS’** and add a key: **lpabc_appgroup**  with the value of your app group (same across all targeta):  **lpabc_appgroup : <your_app_group_id>**
+
+4. Import lpabcsdk and initialize the SDK  
+5. For enabling sde reporting ability, In the iMessage app/extension add the following code in the overrides of
+
+- **override func didBecomeActive(with conversation: MSConversation)**
+	 
+- **override func didReceive(_ message: MSMessage, conversation: MSConversation)  of MSMessagesAppViewController:**
+
+```
+	self.lpabcsdk.updateWithIncomingInteractiveMessage(with: conversation, message: message)
+
+```
 
 
-Implementation:
 
-- Initializing the SDK:
+## SDK Implementation
+-  Initializing the SDK:
 
-		LPABCSDK.initializeSDK()  - default log level will be .info, enable = true
-		LPABCSDK.initializeSDK(minimumLogLevel: .trace, enableLog: true)
-
-- updateWithIncomingInteractiveMessage:
-
-		Updating SDK with an incoming CIM for caching SDE reporting ability relevant payload. 
-
-		Should be impolemented from both override functions:
-        - 'didBecomeActive(with conversation: MSConversation)''
-        - 'didReceive(_ message: MSMessage, conversation: MSConversation)''
-       
-        in the iMessage extension 'MSMessagesAppViewController'
-
+```	LPABCSDK.initializeSDK() - default: log level is .info, enable = true
+	LPABCSDK.initializeSDK(minimumLogLevel: .trace, enableLog: true)
+```
 
 - Create SDEs: 
 
-		createSDE(sdeType: SDE_Type,
-	                        autoSendWhenIdle: Bool? = false,
-	                        completion: (inout SDEBase)
+	**createSDE** function is return an **SDEBase** object in a callback closure, which then could be setup with a desired SDE.
+Once setup, the SDE will be added to a stack that expects an explicit send:
 
-
-		CreateSDE function will generate an SDEBase object with a template reference to the relevant SDE type that passed in parameter, as a completion closure. 
-
-		A setup call on the callback sde is required inorder to initiate the sde with all relevant params, and add it to a stack. 
+```
+	lpabcsdk.createSDE(sdeType: .cartUpdate) { (sdeBase) in  
 		
-		* optional - autoSendWhenIdle, when set to true, the sde will be added to the idleStack which automatically send the stack once idele timeout is met. Detfault is 5 sec but could be anything between 0-15 sec.
-		see setSDEStackIdleInterval(interval:)
+        //setup the sde:
+		sdeBase.cartUpdate?.setup(...)
+	}
+```
+
+Example 1: 
+
+```
+	lpabcsdk.createSDE(sdeType: .visitorError) { (sdeBase) in
+
+            	sdeBase.visitorError?.setup(contextId: "<CONTEXID>",
+                                              message: "<MESSAGE>",
+                                    		  	 code: "<CODE>",
+                                  		 		level: 0,
+                                             resolved: true)
+        }
+```
+
+Example 2:
+```
+  lpabcsdk.createSDE(sdeType: .cartUpdate) { (sdeBase) in
+          
+            //Create a product:
+            let product = SDEProduct.init(name: "<>", category: "<>", sku: "<>", price: 100, quantity: 3)
+           
+            //Setup the sde:
+            sdeBase.cartUpdate?.setup(total: 100, currency: "<>", numItems: 1, products: [product])
+        }
+```
+ 
+ Setup sde could be also be created with a **json** string or **Dictionary** object:
+	  
+Example:
+```  
+	sdeBase.setupWithJson("{\"type\":\"ctmrinfo\"}")
+	sdeBase.setupWithJson(["type":"cart"])
+```
+
+- Sending SDE
+For sending SDE Stack,  use
+
+```  
+	lpabcsdk.sendSDEStack()  
+
+	//Using completion callbacks:
+	lpabcsdk.sendSDEStack(onSuccess: { (success) in
+         	   	 
+        		}) { (error) in
+          		 
+      	 	 }
+```  
+
+- Auto Sending SDE Stack When Idle:
+ 
+	When autoSendWhenIdle is true, SDEs will get aggregated in an SDE stack and will get sent automatically once the stack activity is idle (wait interval).
+
+	You can set the wait time (0-15 sec, default: 5 sec):
+
+```
+	lpabcsdk.setSDEStackIdleInterval(interval: 8)
+```
+Example:
+
+
+```
+
+ 	lpabcsdk.createSDE(sdeType: .customerInfo, autoSendWhenIdle: true) { (sdeBase) in
+            
+         	  	 sdeBase.customerInfo?.setup(cstatus: "<cstatus>",
+                                         	   ctype: "<ctype>",
+                                  		   	 balance: 10,
+                               		 	    currency: "<currency>",
+                          	    	  	    socialId: "<socialId>",
+                         	        	   	    imei: "<imei>",
+                                   	 	 	userName: "<userName>",
+                              	 	 	 companySize: 30,
+                               	 	   companyBranch: "<companyBranch>",
+                               	  	  	 accountName: "<accountName>",
+                                   	 	    	role: "<role>",
+                               		 	 loginStatus: 0,
+                              	 	 	storeZipCode: "<storeZipCode>",
+                                  	     storeNumber: "<storeNumber>",
+                                   	 lastPaymentDate: SDEDate.init(day: 23, 
+																 month: 4, 	
+																  year: 2019),
+                                                      registrationDate: nil)
+        }
+
+```
+
+-   For getting a success/failure callback of idle SDE stack, you can implement idleSDEStackCompletion closure:
+
+```
+	lpabcsdk.idleSDEStackCompletion = {  success  in
+    	              <YOUR CUSTOM CODE HERE>
+    		 }
+```
+
+- Implicit SDE:
+
+ 	Some actions will trigger an implicit SDE flow. This will be in a form of a dedicated  callback closure returning the type of flow - ImplicitSDEType)
+Then you can set the desired SDEs to express your custom reporting for the  event triggered. 
+Currently the only event expressing this is upon receiving a new CIMf or the first time, per conversation ID.
+
+	The type will be called back as follow:
+    
+    lpabcsdk.implicitSDEClosure = { implicitType  in 
+
+```
+	switch implicitType {
+			<YOUR CUSTOM CODE HERE i.e sendCustomerInfoSDE()>
+		}
+   }
+```
+
+- Send CIM (custom interactive message) reply * supported in iMessage target only
+
+```
+	appendReplayMessagePayload(message: MSMessage, textContext: String)
+```
+
+Example:
+```
+	//Create an MSMEssage to send:
+	Let messageToSend = createMessage()  
+
+	//Append text:
+	lpabcsdk.appendReplayMessagePayload(message: messageToSend, textContext: "<YOUR_CUSTOM_TEXT>")
+```
+- Erasable SDE’s (sending onlly the ‘type’)
+	- Cart update
+	- *Customer info (authenticated fields used by connector)
+	- *Personal info (authenticated fields used by connector)
+	- Marketing source
+	- Service Activity
+
+These SDEs will get deleted from the widgets when sent with type only.
+
+- Sample app:
 	 
-- setSDEStackIdleInterval(interval:15):
+	https://s3.amazonaws.com/lp-mobile-apps/lpabcsdk/index.html
+	
+    User: lptester
+	
+    Password: lp1234
 
-		This will setup an Idle timeout interval for auto sending the idle SDE stack (optional).
-		default is 5sec and Max is 15 sec.
-
-- send SDE:
-
-		sendSDEStack(onSuccess success: successClosureType = nil,
-	    	                          onFailure failure: failureClosureType = nil) 
-
-		Sending the agregated SDE stack (when idle stack is not selected). 
-		callback with success/failure closures.
-
-- idleSDEStackCompletion:
-
-		a closure completion callback for sending idle SDE Stack.
-	    	                          
-- implicitSDEClosure:
-
-		Will get invoked when a qualifying event is met, and callback the type of that event 
-		see LPimplicitEventCallbackType 
+	Trust Lookio certificate:
+Settings/General/Device Management/Lookio
 
 
-- LPimplicitEventCallbackType:
-
-	 	Indicating the type of implicit event that is being caled back from the implicitSDEClosure. 
-
-- Textual context for an outgoing CIM (device to LE)implement:
-
-		'appendReplayMessagePayload(message: MSMessage, textContext: String)'
-
-		 With the initiated MSMessage object, and the desired textual String. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
