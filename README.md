@@ -10,49 +10,10 @@ LivePerson ABC SDK goal is to provide integration solutions for iOS apps (Host &
   -  Abvility to send a Custom Interactive Message (CIM) reply message from consumer to agent, with a unique textual context.
   -  Notify special events callback.
   
- LE Account Configuration/ Server side installation:
- 
-1.  Make sure you have an ABC biz ID.
+Apple and LivePerson Configuration
+Make sure you have an Apple Business Chat business ID.
+Contact your LivePerson account representative to enable this SDK on the backend server.
 
-2. In houston,‘ App management' use template/custom to create a json stab:
-	- Make sure to populate a "client_name". The rest of the json is not needed and could be disposed. 
-	- Click “install”, The generated ‘appInstallId’ will show up in the 'Private installed Apps' tab, under the client_name you created.
-3. Enable ABC SDK via Houston:
-	- go to: Messaging Gateway- Apple
-	- Enable SDK enabled flag to ‘true’
-	- Paste the 'app install id' from previous step
-	- Paste in the 'biz id' from first step
-	
-4. Make sure site settings enabled with messaging.sdes (set flag to ‘true’)
-5. Make sure site setting file sharing is enabled (messaging.file.sharing.enabled) flag is set to ‘true’
-
-
-## Structure content CIM for the [sample app](https://s3.amazonaws.com/lp-mobile-apps/lpabcsdk/index.html)
-```
-json:
-{"type": "vertical","elements":[]}
-
-Metadata:
-[{
-  "type": "BusinessChatCustomMessage",
-  "appId": 1234,
-  "appName": "LPABCSDK",
-  "bid":"com.apple.messages.MSMessageExtensionBalloonPlugin:7A76CR8BD8:com.liveperson.lpabcmaker.MessagesExtension",
-  "sessionIdentifier": "",
-  "useLiveLayout": true,
-  "receivedMessage": {
-  "imageURL":"https://s3.amazonaws.com/lp-mobile-apps/ABCBestPractice/cityLogo.jpg",
-    "title": "Message send failure",
-    "style": "icon",
-    "subtitle": "Lots to explore together.",
-    "secondarySubtitle": "Click to download",
-    "tertiarySubtitle": "",
-    "imageTitle": "",
-    "imageSubtitle": ""
-  },
-  "URL": ""
-}]
-```
 
 ## SDK Installation
 
