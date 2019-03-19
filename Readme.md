@@ -1,7 +1,5 @@
-![N|Solid](https://media.glassdoor.com/sqll/11463/liveperson-squarelogo.png)
-## LivePerson iOS ABC SDK
+# LivePerson iOS ABC SDK: a lightweighted SDK for iMessage app/Extension and host App.
 
- 
 
 LivePerson ABC SDK goal is to provide integration solutions for iOS apps (Host & iMessage app/ Extension) with LiveEngage platform. After sending a custom interactive message (CIM), this SDK will allows you to enhance the conversation experience with the following features:
  
