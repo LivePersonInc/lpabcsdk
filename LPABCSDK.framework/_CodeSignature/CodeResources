@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/LPABCSDK-Swift.h</key>
 		<data>
-		IcKoA06ZCiV/92gq7SAPlMp66Rs=
+		0E7PN1ZjO6H69anm629oMHCgm6A=
 		</data>
 		<key>Headers/LPABCSDK.h</key>
 		<data>
@@ -14,19 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BrgVpdxvwFlssZ+flAtWfhT0jC0=
-		</data>
-		<key>LPABCSDK.bundle.Fc9Gzp/bundle.xar</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		aXDLDXj4P1B/idZbkH6eNVi3Qow=
 		</data>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<data>
-		jqzZodq7eSXjhRJ/YHY7rp5rck8=
+		qFmXl4EnJ4Wwoexdg1caCA9mMMw=
 		</data>
 		<key>LPABCSDKModel.momd/VersionInfo.plist</key>
 		<data>
-		ImnJUcHIgKPDtiTGb0m5+hmHy9k=
+		Pb+/WIZisLdu7fLoQk+4b4v9mjI=
 		</data>
 		<key>LPABCSDKStrippingScript.sh</key>
 		<data>
@@ -34,11 +30,11 @@
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		tik+f/Ws/96MCza/+zCaNUkCWRM=
+		vxXsxGt8Lj3yPy6R+HET7nkMPvY=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		RlTqHxdWNbT+7kADJgl2MlxplAI=
+		y51ipl+tldOAiGJHdXvxRy6Vy/o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DUboPKYhdw+Ul5IwVxqzWn07PJQrgWrhp7L4XtME91c=
+			WEPZfT2p+pT+Fz8pRKR3RWAxHjoM5WQ3IQ2KxfMJ68c=
 			</data>
 		</dict>
 		<key>Headers/LPABCSDK.h</key>
@@ -65,25 +61,18 @@
 			JSj8ZolN4SESNOoVJQDoW0AwIh2xWiLd5Ru9E/u5+7o=
 			</data>
 		</dict>
-		<key>LPABCSDK.bundle.Fc9Gzp/bundle.xar</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
-			</data>
-		</dict>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mtK3pW3uZzPL0yEGf+wYQNgnQyosRV7MlOCSmkMYzA0=
+			gjBWU6NLkj/cdIcBbfre1yyWzkGRQBldx15ZGTAWt9I=
 			</data>
 		</dict>
 		<key>LPABCSDKModel.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cO7qqDWZsSlSj4hNXrfhbX812qS7B2I8OoZGH0zgYFQ=
+			Isaq6V0wtuCeh0ilHBwx9AzwY358y4L1nXYJPOFK97k=
 			</data>
 		</dict>
 		<key>LPABCSDKStrippingScript.sh</key>
@@ -97,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			agTxwQcOhxb+iIerO3NR6TJTVWSTDsAKEmNrIO2tW7w=
+			swZDTibFOcUmrQ5Sc+PlqK8snVkCx65nwbNGNs9VSpM=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zbPbSlqlc35DCvfmwY/sIXfuXKOSC6UjNJdff5V7S6g=
+			HCCYRh30EKE5+236ScclGiGlKFrglZgLQPiQBO20tIE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
