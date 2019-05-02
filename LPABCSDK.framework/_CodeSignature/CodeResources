@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/LPABCSDK-Swift.h</key>
 		<data>
-		0E7PN1ZjO6H69anm629oMHCgm6A=
+		cpZlsq4193/3GXeuV+2QIpn8T+0=
 		</data>
 		<key>Headers/LPABCSDK.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aXDLDXj4P1B/idZbkH6eNVi3Qow=
+		V+CBqcui9WEaAl6qqpE9kuZ0/Lw=
 		</data>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<data>
-		qFmXl4EnJ4Wwoexdg1caCA9mMMw=
+		VCj/pjmZUME1IgFa3S6Xc50PwKg=
 		</data>
 		<key>LPABCSDKModel.momd/VersionInfo.plist</key>
 		<data>
-		Pb+/WIZisLdu7fLoQk+4b4v9mjI=
+		7Q9KAygEeYu+x/ESaHAuqpIH4Kw=
 		</data>
 		<key>LPABCSDKStrippingScript.sh</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		vxXsxGt8Lj3yPy6R+HET7nkMPvY=
+		aZqY+d18KA6lE1cmrH4uAQOuqbE=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		y51ipl+tldOAiGJHdXvxRy6Vy/o=
+		A5zOaIeY1swtPLp054fbgHgiFek=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WEPZfT2p+pT+Fz8pRKR3RWAxHjoM5WQ3IQ2KxfMJ68c=
+			Mb2rwUMFcqvWpGpNJzUNwVgMKhvJZ3Ppi+P+7Rbivzw=
 			</data>
 		</dict>
 		<key>Headers/LPABCSDK.h</key>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gjBWU6NLkj/cdIcBbfre1yyWzkGRQBldx15ZGTAWt9I=
+			OO+IaqqqPiqqJbfZU1CZq05P45u6A8rtDdtPtueB1ig=
 			</data>
 		</dict>
 		<key>LPABCSDKModel.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Isaq6V0wtuCeh0ilHBwx9AzwY358y4L1nXYJPOFK97k=
+			gJVBru/JliiZ4sW3ZmIsCZNoFw2Mu+Hp6WPvCzQGIqc=
 			</data>
 		</dict>
 		<key>LPABCSDKStrippingScript.sh</key>
@@ -86,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			swZDTibFOcUmrQ5Sc+PlqK8snVkCx65nwbNGNs9VSpM=
+			oMZ2yh1h3aw2izwad7b0jRjyhlxGoKjR6cVpEAEHnwE=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HCCYRh30EKE5+236ScclGiGlKFrglZgLQPiQBO20tIE=
+			UHHncJCxAfbgvlAMVTATQX+uIp/Hm37Ip/nrL1kB44Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
