@@ -211,7 +211,7 @@ SWIFT_CLASS("_TtC8LPABCSDK38LPABCOutgoingMessagePayloadConstructor")
 ///   </li>
 ///   <li>
 ///     <em>Implicit events callback notification:</em>
-///     Once a predefined event <code>LPimplicitEventCallbackType</code> is fullfiled, an implicit event callback will notify implementors through <code>implicitSDEClosure</code>.
+///     Once a predefined event <code>LPimplicitEventCallbackType</code> is fullfiled, an implicit event callback will notify implementors through <code>implicitEventClosure</code>.
 ///     The best example is the ability to get notified once a new conversation is initiated.
 ///   </li>
 ///   <li>
@@ -229,7 +229,7 @@ SWIFT_CLASS("_TtC8LPABCSDK38LPABCOutgoingMessagePayloadConstructor")
 ///
 ///    aggregatedSDEStackCompletion: completion colsure callback for sending aggregated SDE stack
 ///
-///    implicitSDEClosure: completion colsure callback for implicit Flow
+///    implicitEventClosure: completion colsure callback for implicit Flow
 ///
 /// \endcode
 SWIFT_CLASS("_TtC8LPABCSDK8LPABCSDK")

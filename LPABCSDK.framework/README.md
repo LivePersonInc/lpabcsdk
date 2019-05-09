@@ -37,9 +37,9 @@ ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/LPABCSDK.framework/LPABCSDKStrip
 - **override func didReceive(_ message: MSMessage, conversation: MSConversation)  of MSMessagesAppViewController:**
 
 ```
-lpabcsdk.update(withIncomingInteractiveMessage: conversation)
+lpabcsdk.update(with: conversation)
 
-lpabcsdk.update(withIncomingInteractiveMessage: conversation, message: message)
+lpabcsdk.update(with: conversation, message: message)
 
 ```
 
@@ -181,17 +181,17 @@ If you want to execute code whenever the Aggregated SDE Stack auto send complete
 
 ### Implicit Event Callback
 
-Some consumer actions can trigger an implicit SDE flow (eg. a new conversation starts). If you would like to send an SDE upon one of these events triggering, you can do so by implenting the `implicitSDEClosure` method.
+Some consumer actions can trigger an implicit SDE flow (eg. a new conversation starts). If you would like to send an SDE upon one of these events triggering, you can do so by implenting the `implicitEventClosure` method.
 
 ``` 
-        lpabcsdk.implicitSDEClosure = { implicitEventCallbackType in 
+        lpabcsdk.implicitEventClosure = { implicitEventCallbackType in 
             // implement 
 }
 ```
 
-- `ImplicitEventCallbackType` - Indicates the type of implicit event that is being called back from the implicitSDEClosure. 
+- `ImplicitEventCallbackType` - Indicates the type of implicit event that is being called back from the implicitEventClosure. 
 
-- `implicitSDEClosure` - Invoked when a qualifying event is met, and callback the type of that event 
+- `implicitEventClosure` - Invoked when a qualifying event is met, and callback the type of that event 
 
 
 You can set the desired SDEs to express your custom reporting for the  event triggered. 
@@ -202,7 +202,7 @@ You can set the desired SDEs to express your custom reporting for the  event tri
 Example:
 
 ``` 
-    lpabcsdk.implicitSDEClosure = { implicitType in 
+    lpabcsdk.implicitEventClosure = { implicitType in 
         switch implicitType {
         case .newConversation:
             // Create and send desired SDE

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/LPABCSDK-Swift.h</key>
 		<data>
-		6lRIwgOmSlNpoV7YJbvGbvVK7fw=
+		U2J/CAWp+u3WutcfsoAvJum03qY=
 		</data>
 		<key>Headers/LPABCSDK.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		sVgAhSB+ppHBbzZ2xxTwkVwZ+4g=
+		kPKoXSwOucR4QnHZ8CFjEcYQsAQ=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>README.md</key>
 		<data>
-		3IJmqzpE97Jm2jR08afKnCnsuRI=
+		klnIZDsNij8szDNfzqvbUytNLmY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PLTHvaxtl2J1UlO1ClCxhng8+wcmIFQH+Dl3MBUQ31M=
+			/8RJ7N3vQs5nXA3t0CT3moJihKiKlRLWOYoJfNEKltg=
 			</data>
 		</dict>
 		<key>Headers/LPABCSDK.h</key>
@@ -86,7 +86,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zT1QmdcCVrhcFwj/NLk05HuJ22Mbytg2GUKWt+f1ziw=
+			rifTWM6QXoLswv4IP4X+mFb0Q0j6fKxDVWRTyCHZB0s=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GeO6eWuhVVYD6Kz5TPke6FhY171dSP/J/B4SXGcYFsA=
+			IZCcbuw4kajolRUSmdRYwLCz0trzFNtR49fe9O0nq+U=
 			</data>
 		</dict>
 	</dict>
