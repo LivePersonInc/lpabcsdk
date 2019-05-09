@@ -264,6 +264,7 @@ SWIFT_CLASS("_TtC8LPABCSDK21LPCredentialPayloadMO")
 @property (nonatomic, copy) NSString * _Nullable conversationID;
 @property (nonatomic, copy) NSString * _Nullable timestamp;
 @property (nonatomic, copy) NSString * _Nullable loggosDomain;
+@property (nonatomic, copy) NSString * _Nullable messageParams;
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
