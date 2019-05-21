@@ -181,7 +181,7 @@ If you want to execute code whenever the Aggregated SDE Stack auto send complete
 
 ### Implicit Event Callback
 
-Some consumer actions can trigger an implicit SDE flow (eg. a new conversation starts). If you would like to send an SDE upon one of these events triggering, you can do so by implenting the `implicitEventClosure` method.
+Some consumer actions can trigger an implicit event flow (eg. a new conversation starts). If you would like to send an SDE upon one of these events triggering, you can do so by implenting the `implicitEventClosure` method.
 
 ``` 
         lpabcsdk.implicitEventClosure = { implicitEventCallbackType in 
