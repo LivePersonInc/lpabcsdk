@@ -193,16 +193,20 @@ Example:
 
 These SDEs will get deleted from the widgets when sent with type only.
 
-- Sample app:
+- Sample app (enterprise):
 	 
 	https://s3.amazonaws.com/lp-mobile-apps/lpabcsdk/index.html
 	
-    User: lptester
-	
-    Password: lp1234
+   	User: lptester
+    	Password: lp1234
+    
+* Trust certificate:
+	Settings/General/Device Management/Lookio
+    
+- LE Widget: 
+	https://s3.amazonaws.com/lp-mobile-apps/structureContentWidget/strcutured-content-widget/index.html   
 
-	Trust Lookio certificate:
-Settings/General/Device Management/Lookio
+
 
 
     
