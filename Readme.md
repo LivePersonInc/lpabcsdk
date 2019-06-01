@@ -17,7 +17,7 @@ Contact your LivePerson account representative to enable this SDK on the backend
 
 1. Copy lpabcsdk.framework to your XCode project, make sure it is included in **Embedded Binaries** section, under **project settings/ General** tab for the iMessageApp Target, and  your App target (if needed ).
 
-2. In project settings, navigate to the Build Phases tab, and click the + button to paste the following:
+2. If embeded in your host app, in project settings, navigate to the Build Phases tab, and click the + button to paste the following:
 
 ```
  	${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/LPABCSDK.framework/LPABCSDKStrippingScript.sh
