@@ -26,7 +26,7 @@
 		</data>
 		<key>LPABCSDKStrippingScript.sh</key>
 		<data>
-		ZRKXzD43NH/g9LoUltnuhNnzIg4=
+		68G9iIz5R4pge8BdtmACu2C6YyI=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -43,6 +43,10 @@
 		<key>README.md</key>
 		<data>
 		ZoE7dXSUANtwWJlvby9n2OLpHKM=
+		</data>
+		<key>strip-frameworks.sh</key>
+		<data>
+		68G9iIz5R4pge8BdtmACu2C6YyI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,7 +83,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v2UxU+gNbWCGbHPP+G3zVyMedp4IELqI/F6xKpyYyug=
+			taypEOJRob87b6pSL3MmDZZZtZXtW+XlpaUONfvKCMQ=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
@@ -108,6 +112,13 @@
 			<key>hash2</key>
 			<data>
 			IAZ9nnMf9/5HjF4ycbZP3+bK4OYGnPWISJm6DpG12iM=
+			</data>
+		</dict>
+		<key>strip-frameworks.sh</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			taypEOJRob87b6pSL3MmDZZZtZXtW+XlpaUONfvKCMQ=
 			</data>
 		</dict>
 	</dict>
