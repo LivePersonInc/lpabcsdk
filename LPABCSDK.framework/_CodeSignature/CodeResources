@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/LPABCSDK-Swift.h</key>
 		<data>
-		U2J/CAWp+u3WutcfsoAvJum03qY=
+		b5wzoum7DWtHrnOjDfRWNpQfvRY=
 		</data>
 		<key>Headers/LPABCSDK.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5FEv46JYeVTrWrsMnDU3Xlr9Tkg=
+		UWMPJN+oFQ3o4yeF0+y8LLXf+Pw=
 		</data>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<data>
@@ -28,13 +28,29 @@
 		<data>
 		68G9iIz5R4pge8BdtmACu2C6YyI=
 		</data>
+		<key>Modules/LPABCSDK.swiftmodule/arm.swiftdoc</key>
+		<data>
+		QUn4ZBx1QOAc7nZV2HWeKuspca0=
+		</data>
+		<key>Modules/LPABCSDK.swiftmodule/arm.swiftmodule</key>
+		<data>
+		yzDod1j+3LAOpTYTBI+SAmKZT8w=
+		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		kPKoXSwOucR4QnHZ8CFjEcYQsAQ=
+		tch4i2LsNJRQPicCcsBBIFBAeoQ=
 		</data>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		RS9RI6pgIbgI4NYpXKO5tJItMng=
+		NEwULN/FNXnSsDKjGZmOza8S8xs=
+		</data>
+		<key>Modules/LPABCSDK.swiftmodule/armv7.swiftdoc</key>
+		<data>
+		QUn4ZBx1QOAc7nZV2HWeKuspca0=
+		</data>
+		<key>Modules/LPABCSDK.swiftmodule/armv7.swiftmodule</key>
+		<data>
+		yzDod1j+3LAOpTYTBI+SAmKZT8w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -49,13 +65,21 @@
 	<dict>
 		<key>Headers/LPABCSDK-Swift.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			b5wzoum7DWtHrnOjDfRWNpQfvRY=
+			</data>
 			<key>hash2</key>
 			<data>
-			/8RJ7N3vQs5nXA3t0CT3moJihKiKlRLWOYoJfNEKltg=
+			KWHAyN0lFFg+SUpZpENCSof+svB+eVFQpkKWKoBMQNc=
 			</data>
 		</dict>
 		<key>Headers/LPABCSDK.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			QqdtFfLcjmz+OdsHU4HQFQS9xP0=
+			</data>
 			<key>hash2</key>
 			<data>
 			JSj8ZolN4SESNOoVJQDoW0AwIh2xWiLd5Ru9E/u5+7o=
@@ -63,6 +87,10 @@
 		</dict>
 		<key>LPABCSDKModel.momd/LPABCSDKModel.mom</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			RGNaRFIXBKDk/QGld9Jj9Bl5bcw=
+			</data>
 			<key>hash2</key>
 			<data>
 			ovdG7MsvnavzQAavAndquZcxAIWgIMm+QpvaO6omLDg=
@@ -70,6 +98,10 @@
 		</dict>
 		<key>LPABCSDKModel.momd/VersionInfo.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			62is9zrZOJa5J/RfvYE/VT6LsLM=
+			</data>
 			<key>hash2</key>
 			<data>
 			31OSXojBGXupC8cly4UaDDsQsDw6Ctggq7Iz25b8iWg=
@@ -77,27 +109,87 @@
 		</dict>
 		<key>LPABCSDKStrippingScript.sh</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			68G9iIz5R4pge8BdtmACu2C6YyI=
+			</data>
 			<key>hash2</key>
 			<data>
 			taypEOJRob87b6pSL3MmDZZZtZXtW+XlpaUONfvKCMQ=
 			</data>
 		</dict>
-		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/LPABCSDK.swiftmodule/arm.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			QUn4ZBx1QOAc7nZV2HWeKuspca0=
+			</data>
 			<key>hash2</key>
 			<data>
-			rifTWM6QXoLswv4IP4X+mFb0Q0j6fKxDVWRTyCHZB0s=
+			r8gpYFYinLV+HN9kHHh5LR4WKKCiTrjTWZwseQrVK7Y=
+			</data>
+		</dict>
+		<key>Modules/LPABCSDK.swiftmodule/arm.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yzDod1j+3LAOpTYTBI+SAmKZT8w=
+			</data>
+			<key>hash2</key>
+			<data>
+			vR3T4zp9Z/NAd/aj9ZwTUtzw9yLSe+d0iVn9lVf7aLM=
+			</data>
+		</dict>
+		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tch4i2LsNJRQPicCcsBBIFBAeoQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			SNpdtTAJSw4+NilbjaqaTIxBZicNATlDTjnyESU+WWc=
 			</data>
 		</dict>
 		<key>Modules/LPABCSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			NEwULN/FNXnSsDKjGZmOza8S8xs=
+			</data>
 			<key>hash2</key>
 			<data>
-			vQRjL1sglcwzBeKtKSvKDSn3SIFdyaPeOA/gQGij03Q=
+			ci0u8QBrSpFL5p/maC8a6vxBHI1tV78/VkhO9trLSaE=
+			</data>
+		</dict>
+		<key>Modules/LPABCSDK.swiftmodule/armv7.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QUn4ZBx1QOAc7nZV2HWeKuspca0=
+			</data>
+			<key>hash2</key>
+			<data>
+			r8gpYFYinLV+HN9kHHh5LR4WKKCiTrjTWZwseQrVK7Y=
+			</data>
+		</dict>
+		<key>Modules/LPABCSDK.swiftmodule/armv7.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yzDod1j+3LAOpTYTBI+SAmKZT8w=
+			</data>
+			<key>hash2</key>
+			<data>
+			vR3T4zp9Z/NAd/aj9ZwTUtzw9yLSe+d0iVn9lVf7aLM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			JoWQPh4UnHBWitBsNs1cucqIj1M=
+			</data>
 			<key>hash2</key>
 			<data>
 			WeRsNZZRRoM4UhzkhXK4OTHVG0nxm3+X+2YmpiwImXc=
@@ -105,6 +197,10 @@
 		</dict>
 		<key>README.md</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			ZoE7dXSUANtwWJlvby9n2OLpHKM=
+			</data>
 			<key>hash2</key>
 			<data>
 			IAZ9nnMf9/5HjF4ycbZP3+bK4OYGnPWISJm6DpG12iM=
