@@ -6,6 +6,5 @@ framework module LPABCSDK {
 }
 
 module LPABCSDK.Swift {
-    header "LPABCSDK-Swift.h"
-    requires objc
+     
 }
