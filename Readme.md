@@ -305,7 +305,7 @@ lpabcsdk.abcEventCallback = { implicitType in
             // Create and send desired SDE
             break
         case.custom:
-             /Accsess your custom payload embeded in CIM URL.
+             /Accsess your custom payload embedded in CIM URL.
              break
     }
 }
