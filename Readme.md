@@ -296,7 +296,7 @@ Supported Event Types: - newConversation - Receiving an incoming (agent to consu
 
 
 ```
-lpabcsdk.implicitEventClosure = { implicitType in
+lpabcsdk.abcEventCallback = { implicitType in
     switch implicitType {
         case .newConversation:
             // Create and send desired SDE
@@ -304,6 +304,9 @@ lpabcsdk.implicitEventClosure = { implicitType in
         case .secureForm(.submitted):
             // Create and send desired SDE
             break
+        case.custom:
+             /Accsess your custom payload embeded in CIM URL.
+             break
     }
 }
 
