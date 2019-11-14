@@ -51,17 +51,59 @@ pod init
 3. For each implementing target, make sure to enable App groups in capabilities section in the info.plist: 
 - create a dictionary with the key **‘LPABC_PARAMS’** and add a key: **lpabc_appgroup**  with the value of your app group (same across all targeta):  **lpabc_appgroup : <your_app_group_id>**
 
-4. Import lpabcsdk and initialize the SDK  
+4. Import lpabcsdk and initialize the SDK : 
+
+### Initializing the SDK
+
+This method initializes the SDK.
+
+```swift
+//Basic initializer, the default minimumLogLevel will be .info.
+LPABCSDK.initialize()
+
+//Initializer with explicit log level
+LPABCSDK.initialize(minimumLogLevel: .trace)
+
+//For disabling logs use LPABCLogLevel.none
+LPABCSDK.initialize(minimumLogLevel: .none)
+
+
+//Use 'eventSubscription' for passing the events 'LPABCEvent' you wish to get a callback notification for. 
+//If not explicitly stated, the default would be subscribing to all events.
+LPABCSDK.initialize(minimumLogLevel: .none, eventSubscription: [.newConversation])
+
+//To disable events notification use 'LPABCEvent.noEvents'
+LPABCSDK.initialize(eventSubscription: LPABCEvent.noEvents)
+```
+
+-  Disposing the SDK:
+```
+    LPABCSDK.dispose()
+```
 
 5. In the iMessage app/extension's MessagesViewController class, please make sure to override the following methods:
 
+### Update the SDK with Incoming CIM
+
+Upon an agent sending a [Custom Interactive Message (CIM)](apple-business-chat-templates-custom-interactive-message-template.html) to the consumer, this method will update the SDK with a payload that will enable SDE reporting to LiveEngage.
+
+```swift
+func update(with conversation: MSConversation, message: MSMessage? = nil, abcsdkParams: ABCSDKParams? = nil)
 
 ```
-override func didBecomeActive(with conversation: MSConversation)
-override func didSelect(_ message: MSMessage, conversation: MSConversation)
-override func didReceive(_ message: MSMessage, conversation: MSConversation)
 
-```
+- `message` sould be used where available and returned by the override method.
+
+- `ABCSDKParams` is optional and should be used for passing references to the sdk. Should be used in `didBecomeActive` and `didSelect`.
+
+Should be implemented from these override functions in the iMessage app extension `MSMessagesAppViewController`:
+
+- `didBecomeActive(with conversation: MSConversation)`
+- `didSelect(_ message: MSMessage, conversation: MSConversation)`
+- `didReceive(_ message: MSMessage, conversation: MSConversation)`
+
+See [step 6 of Installation for more](apple-business-chat-sdk-installation.html#sdk-installation-in-xcode).
+
 For passing in references to the SDK (optional), please and use SDKParams to reference elements such as MSMessagesAppViewController, etc. See the override of viewDidLoad() in the example below.
 In the implementation of these methods, add the appropriate update() methods for each, seen in the example below.
 
@@ -98,40 +140,10 @@ class MessagesViewController : MSMessagesViewController {
 }
 ```
 
-## SDK Implementation
--  Initializing the SDK:
-
-```    
-//Basic initializer, the default minimumLogLevel will be .info.
-LPABCSDK.initialize()
-
-//Initializer with explicit log level
-LPABCSDK.initialize(minimumLogLevel: .trace)
-
-//For disabling logs use LPABCLogLevel.none
-LPABCSDK.initialize(minimumLogLevel: .none)
-
-
-//Use 'eventSubscription' for passing the events 'LPABCEvent' you wish to get a callback notification for. 
-//If not explicitly stated, the default would be subscribing to all events.
-LPABCSDK.initialize(minimumLogLevel: .none, eventSubscription: [.newConversation])
-
-//To disable events notification use 'LPABCEvent.noEvents'
-LPABCSDK.initialize(eventSubscription: LPABCEvent.noEvents)
-```
--  Disposing the SDK:
-```
-    LPABCSDK.dispose()
-```
-
+ 
 Update the SDK with Incoming CIM
 
 Upon an agent sending a Custom Interactive Message (CIM) to the consumer, this method will update the SDK with a payload that will enable SDE reporting to LiveEngage.
-
-```
-func update(with conversation: MSConversation, message: MSMessage? = nil, abcsdkParams: ABCSDKParams? = nil)
-
-```
 
 
 ### Create SDEs
