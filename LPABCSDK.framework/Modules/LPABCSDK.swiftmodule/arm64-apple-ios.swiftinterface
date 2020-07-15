@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target arm64-apple-ios11.3 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LPABCSDK
 import CoreData
 import Foundation
@@ -9,17 +9,17 @@ import Network
 import Swift
 import UIKit
 import WebKit
-@objc final public class LPABCSDK : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class LPABCSDK : ObjectiveC.NSObject {
   final public var isCacheLoaded: Swift.Bool {
     get
-    }
+  }
   final public var hostEnvironment: LPABCSDK.LPHostEnvironment? {
     get
   }
   final public var aggregatedSDEStackCompletion: LPABCSDK.LPABCSDK.CompletionCallbackType
   public static var isPresenting: Swift.Bool? {
     get
-    }
+  }
   public typealias SuccessCallbackType = ((Swift.Bool) -> Swift.Void)?
   public typealias FailureCallbackType = ((Swift.Error?) -> Swift.Void)?
   public typealias CompletionCallbackType = ((Swift.Bool, Swift.Error?) -> Swift.Void)?
@@ -42,10 +42,10 @@ public struct SDECart : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDEMarketingSource : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEMarketingSource : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(channel: LPABCSDK.SDEChanelType?, affiliate: Swift.String?, campaignID: Swift.String?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -133,19 +133,19 @@ public struct SDEDate : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDEService : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEService : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(topic: Swift.String?, status: LPABCSDK.SDEStatusType?, category: Swift.String?, serviceId: Swift.String?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDESearchedContent : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDESearchedContent : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(keywords: [Swift.String]?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -155,28 +155,28 @@ extension LPABCSDK {
   @available(iOS 11.3, *)
   final public func update(with conversation: Messages.MSConversation, message: Messages.MSMessage? = nil, sdkParams: LPABCSDK.SDKParams? = nil)
 }
-public class SDEVisitorError : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEVisitorError : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(contextId: Swift.String?, message: Swift.String?, code: Swift.String?, level: Swift.Int?, resolved: Swift.Bool?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDEProductView : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEProductView : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(currency: Swift.String?, products: [LPABCSDK.SDEProductMaker]?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDEPersonalInfo : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEPersonalInfo : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(firstname: Swift.String?, lastname: Swift.String?, gender: LPABCSDK.SDEGenderType?, company: Swift.String?, language: Swift.String?, age: LPABCSDK.SDEAge?, contacts: [LPABCSDK.SDEContact]?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -192,37 +192,37 @@ public struct SDEContact : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDEBase : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDEBase : Swift.Codable {
   public var cartUpdate: LPABCSDK.SDECartUpdate? {
     get
-    }
+  }
   public var transaction: LPABCSDK.SDETransaction? {
     get
-    }
+  }
   public var viewedProduct: LPABCSDK.SDEProductView? {
     get
-    }
+  }
   public var customerInfo: LPABCSDK.SDECustomerInfo? {
     get
-    }
+  }
   public var marketingSource: LPABCSDK.SDEMarketingSource? {
     get
-    }
+  }
   public var personalInfo: LPABCSDK.SDEPersonalInfo? {
     get
-    }
+  }
   public var lead: LPABCSDK.SDELead? {
     get
-    }
+  }
   public var serviceActivity: LPABCSDK.SDEService? {
     get
-    }
+  }
   public var visitorError: LPABCSDK.SDEVisitorError? {
     get
-    }
+  }
   public var searchedContent: LPABCSDK.SDESearchedContent? {
     get
-    }
+  }
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -230,19 +230,19 @@ public class SDEBase : Swift.Codable {
 extension SDEBase {
   public func setupWithJson<T>(_ json: T?) where T : LPABCSDK.UnifiedLooseSDE
 }
-public class SDECartUpdate : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDECartUpdate : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(total: Swift.Double?, currency: Swift.String?, numItems: Swift.Int?, products: [LPABCSDK.SDEProductMaker]?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class SDETransaction : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDETransaction : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(total: Swift.Double?, currency: Swift.String?, orderId: Swift.String?, products: [LPABCSDK.SDEProductMaker])
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -267,10 +267,10 @@ public enum LPABCLogLevel : Swift.Int {
   case error
   case none
   public typealias RawValue = Swift.Int
-  public init?(rawValue: Swift.Int)
   public var rawValue: Swift.Int {
     get
   }
+  public init?(rawValue: Swift.Int)
 }
 @available(iOS 11.3, *)
 public enum LPABCEvent : Swift.Comparable, Swift.Hashable {
@@ -279,11 +279,11 @@ public enum LPABCEvent : Swift.Comparable, Swift.Hashable {
   case secureForm(LPABCSDK.SecureFormState)
   case custom
   case none
+  public static func == (a: LPABCSDK.LPABCEvent, b: LPABCSDK.LPABCEvent) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: LPABCSDK.LPABCEvent, b: LPABCSDK.LPABCEvent) -> Swift.Bool
 }
 @available(iOS 11.3, *)
 public enum SecureFormState {
@@ -291,11 +291,11 @@ public enum SecureFormState {
   case submitted
   case expired
   case error
+  public static func == (a: LPABCSDK.SecureFormState, b: LPABCSDK.SecureFormState) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: LPABCSDK.SecureFormState, b: LPABCSDK.SecureFormState) -> Swift.Bool
 }
 @available(iOS 11.3, *)
 extension LPABCEvent {
@@ -306,10 +306,10 @@ extension LPABCSDK {
   final public func createSDE(sdeType: LPABCSDK.SDEType, aggregate: Swift.Bool? = false, completion: (inout LPABCSDK.SDEBase) -> Swift.Void)
   final public func sendSDEStack(onSuccess success: LPABCSDK.LPABCSDK.SuccessCallbackType = nil, onFailure failure: LPABCSDK.LPABCSDK.FailureCallbackType = nil)
 }
-public class SDECustomerInfo : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDECustomerInfo : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(cstatus: Swift.String?, ctype: Swift.String?, balance: Swift.Double?, currency: Swift.String?, socialId: Swift.String?, imei: Swift.String?, userName: Swift.String?, companySize: Swift.Int?, companyBranch: Swift.String?, accountName: Swift.String?, role: Swift.String?, loginStatus: Swift.Int?, storeZipCode: Swift.String?, storeNumber: Swift.String?, lastPaymentDate: LPABCSDK.SDEDate?, registrationDate: LPABCSDK.SDEDate?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -330,13 +330,13 @@ infix operator ^^ : PowerPrecedence
 public struct SDKParams {
   weak public var messagesViewController: Messages.MSMessagesAppViewController? {
     get
-    }
+  }
   public var secureFormReplyImagee: UIKit.UIImage? {
     get
-    }
+  }
   public var secureFormReplyText: Swift.String? {
     get
-    }
+  }
   public init?(messagesViewController: Messages.MSMessagesAppViewController, secureFormReplyImagee: UIKit.UIImage? = nil, secureFormReplyText: Swift.String? = nil)
 }
 public protocol UnifiedLooseSDE {
@@ -363,10 +363,10 @@ extension String : LPABCSDK.UnifiedLooseSDE {
     set
   }
 }
-public class SDELead : Swift.Codable {
+@_hasMissingDesignatedInitializers public class SDELead : Swift.Codable {
   public var type: Swift.String {
     get
-    }
+  }
   public func setup(topic: Swift.String?, value: Swift.Double?, currency: Swift.String?, leadId: Swift.String?)
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
@@ -388,9 +388,13 @@ extension LPABCSDK.SDEPhoneType : Swift.Equatable {}
 extension LPABCSDK.SDEPhoneType : Swift.Hashable {}
 extension LPABCSDK.SDEPhoneType : Swift.RawRepresentable {}
 @available(iOS 11.3, *)
+extension LPABCSDK.LPHostEnvironment : Swift.Equatable {}
+@available(iOS 11.3, *)
 extension LPABCSDK.LPHostEnvironment : Swift.Hashable {}
 @available(iOS 11.3, *)
 extension LPABCSDK.LPHostEnvironment : Swift.RawRepresentable {}
+@available(iOS 11.3, *)
+extension LPABCSDK.LPABCLogLevel : Swift.Equatable {}
 @available(iOS 11.3, *)
 extension LPABCSDK.LPABCLogLevel : Swift.Hashable {}
 @available(iOS 11.3, *)
