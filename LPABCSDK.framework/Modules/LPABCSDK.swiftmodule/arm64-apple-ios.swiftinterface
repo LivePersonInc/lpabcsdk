@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.3 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LPABCSDK
 import CoreData
 import Foundation
@@ -39,8 +39,8 @@ import WebKit
   @objc deinit
 }
 public struct SDECart : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDEMarketingSource : Swift.Codable {
   public var type: Swift.String {
@@ -48,8 +48,8 @@ public struct SDECart : Swift.Codable {
   }
   public func setup(channel: LPABCSDK.SDEChanelType?, affiliate: Swift.String?, campaignID: Swift.String?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public enum SDEType : Swift.String, Swift.CaseIterable {
   case cartUpdate
@@ -62,13 +62,13 @@ public enum SDEType : Swift.String, Swift.CaseIterable {
   case serviceActivity
   case visitorError
   case searchedContent
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [LPABCSDK.SDEType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [LPABCSDK.SDEType] {
     get
   }
-  public typealias AllCases = [LPABCSDK.SDEType]
-  public static var allCases: [LPABCSDK.SDEType] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -84,8 +84,8 @@ public enum SDEStatusType : Swift.Int {
   case removed
   case assigned
   case waiting
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -96,18 +96,18 @@ public enum SDEChanelType : Swift.Int {
   case social
   case email
   case referral
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 public enum SDEGenderType : Swift.String {
   case male
   case female
   case other
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -122,16 +122,16 @@ public enum SDEPhoneType : Swift.String {
   case work_fax
   case pager
   case other
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
 }
 public struct SDEDate : Swift.Codable {
   public init(day: Swift.Int, month: Swift.Int, year: Swift.Int)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDEService : Swift.Codable {
   public var type: Swift.String {
@@ -139,8 +139,8 @@ public struct SDEDate : Swift.Codable {
   }
   public func setup(topic: Swift.String?, status: LPABCSDK.SDEStatusType?, category: Swift.String?, serviceId: Swift.String?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDESearchedContent : Swift.Codable {
   public var type: Swift.String {
@@ -148,8 +148,8 @@ public struct SDEDate : Swift.Codable {
   }
   public func setup(keywords: [Swift.String]?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension LPABCSDK {
   @available(iOS 11.3, *)
@@ -161,8 +161,8 @@ extension LPABCSDK {
   }
   public func setup(contextId: Swift.String?, message: Swift.String?, code: Swift.String?, level: Swift.Int?, resolved: Swift.Bool?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDEProductView : Swift.Codable {
   public var type: Swift.String {
@@ -170,8 +170,8 @@ extension LPABCSDK {
   }
   public func setup(currency: Swift.String?, products: [LPABCSDK.SDEProductMaker]?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDEPersonalInfo : Swift.Codable {
   public var type: Swift.String {
@@ -179,18 +179,18 @@ extension LPABCSDK {
   }
   public func setup(firstname: Swift.String?, lastname: Swift.String?, gender: LPABCSDK.SDEGenderType?, company: Swift.String?, language: Swift.String?, age: LPABCSDK.SDEAge?, contacts: [LPABCSDK.SDEContact]?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public struct SDEAge : Swift.Codable {
   public init(age: Swift.Int?, year: Swift.Int?, month: Swift.Int?, day: Swift.Int?)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct SDEContact : Swift.Codable {
   public init(email: Swift.String?, phone: Swift.String?, phoneType: LPABCSDK.SDEPhoneType?, country: Swift.String?, region: Swift.String?)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDEBase : Swift.Codable {
   public var cartUpdate: LPABCSDK.SDECartUpdate? {
@@ -224,8 +224,8 @@ public struct SDEContact : Swift.Codable {
     get
   }
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension SDEBase {
   public func setupWithJson<T>(_ json: T?) where T : LPABCSDK.UnifiedLooseSDE
@@ -236,8 +236,8 @@ extension SDEBase {
   }
   public func setup(total: Swift.Double?, currency: Swift.String?, numItems: Swift.Int?, products: [LPABCSDK.SDEProductMaker]?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class SDETransaction : Swift.Codable {
   public var type: Swift.String {
@@ -245,18 +245,18 @@ extension SDEBase {
   }
   public func setup(total: Swift.Double?, currency: Swift.String?, orderId: Swift.String?, products: [LPABCSDK.SDEProductMaker])
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @available(iOS 11.3, *)
 public enum LPHostEnvironment : Swift.String {
   case iOSApp
   case iMessageApp
+  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
-  public init?(rawValue: Swift.String)
 }
 @available(iOS 11.3, *)
 public enum LPABCLogLevel : Swift.Int {
@@ -266,11 +266,11 @@ public enum LPABCLogLevel : Swift.Int {
   case warning
   case error
   case none
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @available(iOS 11.3, *)
 public enum LPABCEvent : Swift.Comparable, Swift.Hashable {
@@ -280,10 +280,10 @@ public enum LPABCEvent : Swift.Comparable, Swift.Hashable {
   case custom
   case none
   public static func == (a: LPABCSDK.LPABCEvent, b: LPABCSDK.LPABCEvent) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @available(iOS 11.3, *)
 public enum SecureFormState {
@@ -292,10 +292,10 @@ public enum SecureFormState {
   case expired
   case error
   public static func == (a: LPABCSDK.SecureFormState, b: LPABCSDK.SecureFormState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @available(iOS 11.3, *)
 extension LPABCEvent {
@@ -312,16 +312,16 @@ extension LPABCSDK {
   }
   public func setup(cstatus: Swift.String?, ctype: Swift.String?, balance: Swift.Double?, currency: Swift.String?, socialId: Swift.String?, imei: Swift.String?, userName: Swift.String?, companySize: Swift.Int?, companyBranch: Swift.String?, accountName: Swift.String?, role: Swift.String?, loginStatus: Swift.Int?, storeZipCode: Swift.String?, storeNumber: Swift.String?, lastPaymentDate: LPABCSDK.SDEDate?, registrationDate: LPABCSDK.SDEDate?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension LPABCSDK {
   final public func appendReplayContextualText(message: Messages.MSMessage, textContext: Swift.String)
 }
 public struct SDEProductMaker : Swift.Codable {
   public init(name: Swift.String?, category: Swift.String?, sku: Swift.String?, price: Swift.Double?, quantity: Swift.Int?)
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 precedencegroup PowerPrecedence {
   higherThan: MultiplicationPrecedence
@@ -369,8 +369,8 @@ extension String : LPABCSDK.UnifiedLooseSDE {
   }
   public func setup(topic: Swift.String?, value: Swift.Double?, currency: Swift.String?, leadId: Swift.String?)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension LPABCSDK.SDEType : Swift.Equatable {}
 extension LPABCSDK.SDEType : Swift.Hashable {}
