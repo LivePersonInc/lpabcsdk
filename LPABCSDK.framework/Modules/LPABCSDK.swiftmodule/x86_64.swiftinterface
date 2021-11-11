@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios11.3-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LPABCSDK
 import CoreData
 import Foundation
@@ -9,6 +9,7 @@ import Network
 import Swift
 import UIKit
 import WebKit
+import _Concurrency
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class LPABCSDK : ObjectiveC.NSObject {
   final public var isCacheLoaded: Swift.Bool {
     get
@@ -20,10 +21,10 @@ import WebKit
   public static var isPresenting: Swift.Bool? {
     get
   }
-  public typealias SuccessCallbackType = ((Swift.Bool) -> Swift.Void)?
-  public typealias FailureCallbackType = ((Swift.Error?) -> Swift.Void)?
-  public typealias CompletionCallbackType = ((Swift.Bool, Swift.Error?) -> Swift.Void)?
-  public typealias EventCallbackType = ((LPABCSDK.LPABCEvent, Foundation.URLQueryItem?) -> Swift.Void)?
+  public typealias SuccessCallbackType = ((_ success: Swift.Bool) -> Swift.Void)?
+  public typealias FailureCallbackType = ((_ error: Swift.Error?) -> Swift.Void)?
+  public typealias CompletionCallbackType = ((_ success: Swift.Bool, _ error: Swift.Error?) -> Swift.Void)?
+  public typealias EventCallbackType = ((_ type: LPABCSDK.LPABCEvent, _ customPayload: Foundation.URLQueryItem?) -> Swift.Void)?
   final public var abcEventCallback: LPABCSDK.LPABCSDK.EventCallbackType {
     get
     set
@@ -151,7 +152,7 @@ public struct SDEDate : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension LPABCSDK {
+extension LPABCSDK.LPABCSDK {
   @available(iOS 11.3, *)
   final public func update(with conversation: Messages.MSConversation, message: Messages.MSMessage? = nil, sdkParams: LPABCSDK.SDKParams? = nil)
 }
@@ -227,7 +228,7 @@ public struct SDEContact : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension SDEBase {
+extension LPABCSDK.SDEBase {
   public func setupWithJson<T>(_ json: T?) where T : LPABCSDK.UnifiedLooseSDE
 }
 @_hasMissingDesignatedInitializers public class SDECartUpdate : Swift.Codable {
@@ -298,11 +299,11 @@ public enum SecureFormState {
   }
 }
 @available(iOS 11.3, *)
-extension LPABCEvent {
+extension LPABCSDK.LPABCEvent {
   public static let allEvents: Swift.Set<LPABCSDK.LPABCEvent>
   public static let noEvents: Swift.Set<LPABCSDK.LPABCEvent>?
 }
-extension LPABCSDK {
+extension LPABCSDK.LPABCSDK {
   final public func createSDE(sdeType: LPABCSDK.SDEType, aggregate: Swift.Bool? = false, completion: (inout LPABCSDK.SDEBase) -> Swift.Void)
   final public func sendSDEStack(onSuccess success: LPABCSDK.LPABCSDK.SuccessCallbackType = nil, onFailure failure: LPABCSDK.LPABCSDK.FailureCallbackType = nil)
 }
@@ -315,7 +316,7 @@ extension LPABCSDK {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension LPABCSDK {
+extension LPABCSDK.LPABCSDK {
   final public func appendReplayContextualText(message: Messages.MSMessage, textContext: Swift.String)
 }
 public struct SDEProductMaker : Swift.Codable {
@@ -343,7 +344,7 @@ public protocol UnifiedLooseSDE {
   var jsonSDE: Swift.String? { get set }
   var dictionarySDE: [Swift.String : Any]? { get set }
 }
-extension Dictionary : LPABCSDK.UnifiedLooseSDE {
+extension Swift.Dictionary : LPABCSDK.UnifiedLooseSDE {
   public var jsonSDE: Swift.String? {
     get
     set
@@ -353,7 +354,7 @@ extension Dictionary : LPABCSDK.UnifiedLooseSDE {
     set
   }
 }
-extension String : LPABCSDK.UnifiedLooseSDE {
+extension Swift.String : LPABCSDK.UnifiedLooseSDE {
   public var jsonSDE: Swift.String? {
     get
     set
