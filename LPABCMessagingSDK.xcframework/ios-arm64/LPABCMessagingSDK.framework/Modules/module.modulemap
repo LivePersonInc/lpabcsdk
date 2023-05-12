@@ -1,0 +1,11 @@
+framework module LPABCMessagingSDK {
+  umbrella header "LPABCMessagingSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module LPABCMessagingSDK.Swift {
+  header "LPABCMessagingSDK-Swift.h"
+  requires objc
+}

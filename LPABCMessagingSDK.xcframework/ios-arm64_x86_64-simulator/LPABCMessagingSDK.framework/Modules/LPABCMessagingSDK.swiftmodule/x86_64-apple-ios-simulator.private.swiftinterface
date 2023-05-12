@@ -1,0 +1,408 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LPABCMessagingSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreData
+import Foundation
+@_exported import LPABCMessagingSDK
+import Messages
+import Network
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+precedencegroup PowerPrecedence {
+  higherThan: MultiplicationPrecedence
+}
+infix operator ^^ : PowerPrecedence
+public struct SDKParams {
+  weak public var messagesViewController: Messages.MSMessagesAppViewController? {
+    get
+  }
+  public var secureFormReplyImagee: UIKit.UIImage? {
+    get
+  }
+  public var secureFormReplyText: Swift.String? {
+    get
+  }
+  public init?(messagesViewController: Messages.MSMessagesAppViewController, secureFormReplyImagee: UIKit.UIImage? = nil, secureFormReplyText: Swift.String? = nil)
+}
+public protocol UnifiedLooseSDE {
+  var jsonSDE: Swift.String? { get set }
+  var dictionarySDE: [Swift.String : Any]? { get set }
+}
+extension Swift.Dictionary : LPABCMessagingSDK.UnifiedLooseSDE {
+  public var jsonSDE: Swift.String? {
+    get
+    set
+  }
+  public var dictionarySDE: [Swift.String : Any]? {
+    get
+    set
+  }
+}
+extension Swift.String : LPABCMessagingSDK.UnifiedLooseSDE {
+  public var jsonSDE: Swift.String? {
+    get
+    set
+  }
+  public var dictionarySDE: [Swift.String : Any]? {
+    get
+    set
+  }
+}
+@available(iOS 11.3, *)
+public enum LPHostEnvironment : Swift.String {
+  case iOSApp
+  case iMessageApp
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@available(iOS 11.3, *)
+public enum LPABCLogLevel : Swift.Int {
+  case trace
+  case debug
+  case info
+  case warning
+  case error
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 11.3, *)
+public enum LPABCEvent : Swift.Comparable, Swift.Hashable {
+  public static func < (lhs: LPABCMessagingSDK.LPABCEvent, rhs: LPABCMessagingSDK.LPABCEvent) -> Swift.Bool
+  case newConversation
+  case secureForm(LPABCMessagingSDK.SecureFormState)
+  case custom
+  case none
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: LPABCMessagingSDK.LPABCEvent, b: LPABCMessagingSDK.LPABCEvent) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 11.3, *)
+public enum SecureFormState {
+  case viewed
+  case submitted
+  case expired
+  case error
+  public static func == (a: LPABCMessagingSDK.SecureFormState, b: LPABCMessagingSDK.SecureFormState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPABCEvent {
+  public static let allEvents: Swift.Set<LPABCMessagingSDK.LPABCEvent>
+  public static let noEvents: Swift.Set<LPABCMessagingSDK.LPABCEvent>?
+}
+public enum SDEType : Swift.String, Swift.CaseIterable {
+  case cartUpdate
+  case transaction
+  case viewedProduct
+  case customerInfo
+  case marketingSource
+  case personalInfo
+  case lead
+  case serviceActivity
+  case visitorError
+  case searchedContent
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [LPABCMessagingSDK.SDEType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [LPABCMessagingSDK.SDEType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SDEStatusType : Swift.Int {
+  case complete
+  case in_Progress
+  case approved
+  case cancelled
+  case not_Approved
+  case reviewed
+  case missing_Details
+  case closed
+  case removed
+  case assigned
+  case waiting
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SDEChanelType : Swift.Int {
+  case direct
+  case search
+  case social
+  case email
+  case referral
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SDEGenderType : Swift.String {
+  case male
+  case female
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SDEPhoneType : Swift.String {
+  case home
+  case mobile
+  case work
+  case fax
+  case main
+  case home_fax
+  case work_fax
+  case pager
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension LPABCMessagingSDK.LPABCSDK {
+  @available(iOS 11.3, *)
+  final public func update(with conversation: Messages.MSConversation, message: Messages.MSMessage? = nil, sdkParams: LPABCMessagingSDK.SDKParams? = nil)
+}
+extension LPABCMessagingSDK.LPABCSDK {
+  final public func createSDE(sdeType: LPABCMessagingSDK.SDEType, aggregate: Swift.Bool? = false, completion: (inout LPABCMessagingSDK.SDEBase) -> Swift.Void)
+  final public func sendSDEStack(onSuccess success: LPABCMessagingSDK.LPABCSDK.SuccessCallbackType = nil, onFailure failure: LPABCMessagingSDK.LPABCSDK.FailureCallbackType = nil)
+}
+extension LPABCMessagingSDK.LPABCSDK {
+  final public func appendReplayContextualText(message: Messages.MSMessage, textContext: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class SDEBase : Swift.Codable {
+  public var cartUpdate: LPABCMessagingSDK.SDECartUpdate? {
+    get
+  }
+  public var transaction: LPABCMessagingSDK.SDETransaction? {
+    get
+  }
+  public var viewedProduct: LPABCMessagingSDK.SDEProductView? {
+    get
+  }
+  public var customerInfo: LPABCMessagingSDK.SDECustomerInfo? {
+    get
+  }
+  public var marketingSource: LPABCMessagingSDK.SDEMarketingSource? {
+    get
+  }
+  public var personalInfo: LPABCMessagingSDK.SDEPersonalInfo? {
+    get
+  }
+  public var lead: LPABCMessagingSDK.SDELead? {
+    get
+  }
+  public var serviceActivity: LPABCMessagingSDK.SDEService? {
+    get
+  }
+  public var visitorError: LPABCMessagingSDK.SDEVisitorError? {
+    get
+  }
+  public var searchedContent: LPABCMessagingSDK.SDESearchedContent? {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension LPABCMessagingSDK.SDEBase {
+  public func setupWithJson<T>(_ json: T?) where T : LPABCMessagingSDK.UnifiedLooseSDE
+}
+@_hasMissingDesignatedInitializers public class SDECartUpdate : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(total: Swift.Double?, currency: Swift.String?, numItems: Swift.Int?, products: [LPABCMessagingSDK.SDEProductMaker]?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDETransaction : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(total: Swift.Double?, currency: Swift.String?, orderId: Swift.String?, products: [LPABCMessagingSDK.SDEProductMaker])
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDEProductView : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(currency: Swift.String?, products: [LPABCMessagingSDK.SDEProductMaker]?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDECustomerInfo : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(cstatus: Swift.String?, ctype: Swift.String?, balance: Swift.Double?, currency: Swift.String?, socialId: Swift.String?, imei: Swift.String?, userName: Swift.String?, companySize: Swift.Int?, companyBranch: Swift.String?, accountName: Swift.String?, role: Swift.String?, loginStatus: Swift.Int?, storeZipCode: Swift.String?, storeNumber: Swift.String?, lastPaymentDate: LPABCMessagingSDK.SDEDate?, registrationDate: LPABCMessagingSDK.SDEDate?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDEMarketingSource : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(channel: LPABCMessagingSDK.SDEChanelType?, affiliate: Swift.String?, campaignID: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDEPersonalInfo : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(firstname: Swift.String?, lastname: Swift.String?, gender: LPABCMessagingSDK.SDEGenderType?, company: Swift.String?, language: Swift.String?, age: LPABCMessagingSDK.SDEAge?, contacts: [LPABCMessagingSDK.SDEContact]?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public struct SDEAge : Swift.Codable {
+  public init(age: Swift.Int?, year: Swift.Int?, month: Swift.Int?, day: Swift.Int?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SDEContact : Swift.Codable {
+  public init(email: Swift.String?, phone: Swift.String?, phoneType: LPABCMessagingSDK.SDEPhoneType?, country: Swift.String?, region: Swift.String?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDELead : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(topic: Swift.String?, value: Swift.Double?, currency: Swift.String?, leadId: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDEService : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(topic: Swift.String?, status: LPABCMessagingSDK.SDEStatusType?, category: Swift.String?, serviceId: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDEVisitorError : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(contextId: Swift.String?, message: Swift.String?, code: Swift.String?, level: Swift.Int?, resolved: Swift.Bool?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class SDESearchedContent : Swift.Codable {
+  public var type: Swift.String {
+    get
+  }
+  public func setup(keywords: [Swift.String]?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public struct SDEProductMaker : Swift.Codable {
+  public init(name: Swift.String?, category: Swift.String?, sku: Swift.String?, price: Swift.Double?, quantity: Swift.Int?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SDECart : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SDEDate : Swift.Codable {
+  public init(day: Swift.Int, month: Swift.Int, year: Swift.Int)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class LPABCSDK : ObjectiveC.NSObject {
+  final public var isCacheLoaded: Swift.Bool {
+    get
+  }
+  final public var hostEnvironment: LPABCMessagingSDK.LPHostEnvironment? {
+    get
+  }
+  final public var aggregatedSDEStackCompletion: LPABCMessagingSDK.LPABCSDK.CompletionCallbackType
+  public static var isPresenting: Swift.Bool? {
+    get
+  }
+  public typealias SuccessCallbackType = ((_ success: Swift.Bool) -> Swift.Void)?
+  public typealias FailureCallbackType = ((_ error: Swift.Error?) -> Swift.Void)?
+  public typealias CompletionCallbackType = ((_ success: Swift.Bool, _ error: Swift.Error?) -> Swift.Void)?
+  public typealias EventCallbackType = ((_ type: LPABCMessagingSDK.LPABCEvent, _ customPayload: Foundation.URLQueryItem?) -> Swift.Void)?
+  final public var abcEventCallback: LPABCMessagingSDK.LPABCSDK.EventCallbackType {
+    get
+    set
+  }
+  final public func setAggregatedInterval(interval: Swift.Double)
+  @available(iOS 11.3, *)
+  @discardableResult
+  public static func initialize(minimumLogLevel: LPABCMessagingSDK.LPABCLogLevel = .info, eventSubscription: Swift.Set<LPABCMessagingSDK.LPABCEvent>? = LPABCEvent.allEvents) -> LPABCMessagingSDK.LPABCSDK
+  @available(iOS 11.3, *)
+  public static func synchronize()
+  @available(iOS 11.3, *)
+  final public class func dispose()
+  @objc deinit
+}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPHostEnvironment : Swift.Equatable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPHostEnvironment : Swift.Hashable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPHostEnvironment : Swift.RawRepresentable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPABCLogLevel : Swift.Equatable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPABCLogLevel : Swift.Hashable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.LPABCLogLevel : Swift.RawRepresentable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.SecureFormState : Swift.Equatable {}
+@available(iOS 11.3, *)
+extension LPABCMessagingSDK.SecureFormState : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEType : Swift.Equatable {}
+extension LPABCMessagingSDK.SDEType : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEType : Swift.RawRepresentable {}
+extension LPABCMessagingSDK.SDEStatusType : Swift.Equatable {}
+extension LPABCMessagingSDK.SDEStatusType : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEStatusType : Swift.RawRepresentable {}
+extension LPABCMessagingSDK.SDEChanelType : Swift.Equatable {}
+extension LPABCMessagingSDK.SDEChanelType : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEChanelType : Swift.RawRepresentable {}
+extension LPABCMessagingSDK.SDEGenderType : Swift.Equatable {}
+extension LPABCMessagingSDK.SDEGenderType : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEGenderType : Swift.RawRepresentable {}
+extension LPABCMessagingSDK.SDEPhoneType : Swift.Equatable {}
+extension LPABCMessagingSDK.SDEPhoneType : Swift.Hashable {}
+extension LPABCMessagingSDK.SDEPhoneType : Swift.RawRepresentable {}
